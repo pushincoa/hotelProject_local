@@ -1,56 +1,52 @@
-.hotelCards {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0.5rem;
-}
 
-.hotelCard {
-	margin: 1rem;
-	padding: 0.3rem;
-	border: 0.1px solid rgba(100, 148, 237, 0.162);
-	cursor: pointer;
+.hotelCards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem;
 }
-
-.hotelInfo {
-	display: flex;
-	margin: 0.2rem;
-	flex-direction: column;
+.hotelCard{
+    margin: 1rem;
+    padding: 0.3rem;
+    border: 0.1px solid rgba(100, 148, 237, 0.162);
+    cursor: pointer;
+    
 }
-
-.hotelTitle {
-	font-size: 1.5rem;
-	font-weight: bold;
+.hotelInfo{
+    display: flex;
+    margin: 0.2rem;
+    flex-direction: column;
 }
-
-.hotelDsc {
-	font-size: 1.25rem;
+.hotelTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
 }
-
-.hotelPrice {
-	text-align: end;
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #0f62a5;
+.hotelDsc{
+    font-size: 1.25rem;
 }
-
-.hotelPic {
-	width: 300px;
+.hotelPrice{
+    text-align: end;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f62a5;
+}
+.hotelPic{
+    width: 300px;
 }
 
 /* hotelInfo */
-.hotelMsg h1 {
-	padding-left: 0.5rem;
+.hotelMsg h1{
+    padding-left: 0.5rem;
+}
+.addressMsg{
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
 }
 
-.addressMsg {
-	display: flex;
-	align-items: center;
-	padding-left: 0.5rem;
+.addressMsg img{
+    margin-right: 0.3rem;
 }
 
-.addressMsg img {
-	margin-right: 0.3rem;
-}
 
 /* 
 .hotelPicCards{
