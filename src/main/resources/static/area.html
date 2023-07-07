@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<link rel="stylesheet" href="./css/areaHotel.css" />
+<link rel="stylesheet" href="./css/asiayo.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+	<!-- ==============NAV BAR============== -->
+	<nav>
+		<div class="nav">
+			<div>
+				<a href="index.html"><img
+					src="https://img.asiayo.com/static/images/main_logo_v3.svg"
+					alt="logo" width="138" height="64" /></a>
+			</div>
+			<div></div>
+			<div class="nav-left">
+				<div class="select">
+					<span>快速索引:</span> <select name="" id="area" onchange="getArea()">
+						<option value="home"><a href="/home.html">依地區選擇</a></option>
+						<option value="taipei"><a href="/home.html">home</a></option>
+					</select>
+				</div>
+				<div class="login">
+					<a href="#">登入/註冊</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- ==============NAV BAR============== -->
+	<section>
+		<div class="local" id="local">北部(使用JS更新內文)</div>
+		<div class="hotelCards" id="hotelCards">
+			<!-- <div class="hotelCard">
+          <div class="hotelPics">
+            <img
+              class="hotelPic"
+              src="https://image-store.asiayo.com/bnb/25993/750xauto/desc_5WyvN3f4rVbMiz.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelTitle">旅晨行旅｜緊鄰台北車站</div>
+            <div class="hotelDsc">商務旅館</div>
+            <div class="hotelPrice">3000/day</div>
+          </div>
+        </div>
+        <div class="hotelCard">
+          <div class="hotelPics">
+            <img
+              class="hotelPic"
+              src="https://image-store.asiayo.com/bnb/25993/750xauto/desc_5WyvN3f4rVbMiz.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelTitle">旅晨行旅｜緊鄰台北車站</div>
+            <div class="hotelDsc">商務旅館</div>
+            <div class="hotelPrice">3000/day</div>
+          </div>
+        </div>
+        <div class="hotelCard">
+          <div class="hotelPics">
+            <img
+              class="hotelPic"
+              src="https://image-store.asiayo.com/bnb/25993/750xauto/desc_5WyvN3f4rVbMiz.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelTitle">旅晨行旅｜緊鄰台北車站</div>
+            <div class="hotelDsc">商務旅館</div>
+            <div class="hotelPrice">3000/day</div>
+          </div>
+        </div>
+        <div class="hotelCard">
+          <div class="hotelPics">
+            <img
+              class="hotelPic"
+              src="https://image-store.asiayo.com/bnb/25993/750xauto/desc_5WyvN3f4rVbMiz.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelTitle">旅晨行旅｜緊鄰台北車站</div>
+            <div class="hotelDsc">商務旅館</div>
+            <div class="hotelPrice">3000/day</div>
+          </div>
+        </div>
+        <div class="hotelCard">
+          <div class="hotelPics">
+            <img
+              class="hotelPic"
+              src="https://image-store.asiayo.com/bnb/25993/750xauto/desc_5WyvN3f4rVbMiz.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelTitle">旅晨行旅｜緊鄰台北車站</div>
+            <div class="hotelDsc">商務旅館</div>
+            <div class="hotelPrice">3000/day</div>
+          </div>
+        </div> -->
+		</div>
+	</section>
+	<footer>
+		<div class="footer">
+			<div class="footerText">
+				<div class="text">週一 ~ 週五 09:00 ~ 22:00 (UTC+8)</div>
+				<div class="text">電話：+886-2-1234-5678</div>
+				<div class="text">信箱：booking@booking.com</div>
+			</div>
+			<div class="connect">
+				<a href="https://www.youtube.com/">聯絡我們</a>
+			</div>
+			<div class="footerIcons">
+				<div class="fIcon">
+					<img
+						src="https://img.asiayo.com/static/images/footer/logo/wordpress.png"
+						alt="" />
+				</div>
+				<div class="fIcon">
+					<img
+						src="https://img.asiayo.com/static/images/footer/logo/facebook.png"
+						alt="" />
+				</div>
+				<div class="fIcon">
+					<img
+						src="https://img.asiayo.com/static/images/footer/logo/instagram.png"
+						alt="" />
+				</div>
+				<div class="fIcon">
+					<img
+						src="https://img.asiayo.com/static/images/footer/logo/line.png"
+						alt="" />
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script>
+      //載入此頁面時立刻執行
+      let hotelCards = document.getElementById("hotelCards");
+      let areaName = localStorage.getItem("areaName");
+      window.addEventListener("DOMContentLoaded", () => {
+        //設定抓取HTML元素
+
+        // let areaName = localStorage.getItem("areaName");
+        //localStorage的值在前一頁點擊圖片時設定
+        let local = document.getElementById("local");
+        let hotelHtml = "";
+        //判斷localStorage的VALUE後在local div 顯示對應的文字
+        if (areaName == "north") local.innerText = "北部";
+        if (areaName == "middle") local.innerText = "中部";
+        if (areaName == "south") local.innerText = "南部";
+        if (areaName == "huadong") local.innerText = "花東";
+        if (areaName == "island") local.innerText = "離島";
+        console.log(areaName);
+        //畫面載入時向後端發送get請求，依照localStorage的VALUE 返回對應的json資料，並使用innerHTML插入到對應的位置
+        //後端返回json list ex:
+        //         [
+        //     {
+        //         "hotelName": "W HOTEL",
+        //         "price": "7000",
+        //         "des": "TAIPEI"
+        //     },
+        //     {
+        //         "hotelName": "君悅飯店",
+        //         "price": "7000",
+        //         "des": "台北"
+        //     }
+        // ]
+
+        $.get(`http://localhost:8080/api/area/${areaName}`, (data) => {
+          //data = JSON資料  此處已經被轉換為JS的 LIST<OBJECT>了，所以可以直接操作
+          //其中<div class="hotelTitle">${data[i].hotelName}</div>的 ${data[i].hotelName}為js模板語法必須使用鍵盤esc下面的`進行字串包覆
+
+          for (let i = 0; i < data.length; i++) {
+            console.log(data[i].pics[0]);
+            hotelHtml += `<div class="hotelCard" id="${data[i].hotelNo}">
+              <div class="hotelPics">
+                <img
+                  class="hotelPic"
+                  src="${data[i].pics[0]}"
+                  alt=""
+                />
+              </div>
+              <div class="hotelInfo">
+                <div class="hotelTitle">${data[i].hotelName}</div>
+                <div class="hotelDsc">電話: ${data[i].phone}</div>
+                <div class="hotelPrice">NT 2000 up/day</div>
+              </div>
+            </div>`;
+          }
+          hotelCards.innerHTML += hotelHtml;
+          console.log(
+            "hotelCards.children.length " + hotelCards.children.length
+          );
+
+          const hotelCard = document.querySelectorAll(".hotelCard");
+          let hotelNo = "";
+          hotelCard.forEach((data) => {
+            data.addEventListener("click", () => {
+              hotelNo = data.getAttribute("id");
+              console.log(hotelNo);
+              localStorage.setItem("hotelNo", hotelNo);
+              window.location.href = "./hotelInfo.html";
+            });
+          });
+        });
+      });
+
+      // let divId = areaName.charAt(0) + "0";
+
+      // console.log(divId);
+    </script>
+</body>
+</html>
