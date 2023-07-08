@@ -167,6 +167,8 @@
                     ng-class="{ 'invalid-input': myForm.hotelemail.$invalid && !myForm.hotelemail.$pristine }"
                     ng-disabled="!area"
                   />
+                  <small ng-show="myForm.hotelemail.$error.pattern">請輸入有效的帳號</small>
+                  
                 </li>
                 <li>
                   <input
