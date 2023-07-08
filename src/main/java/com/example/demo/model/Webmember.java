@@ -89,7 +89,7 @@ public class Webmember implements Serializable {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
+	@JsonIgnore
 	public List<Roomstatus> getRoomstatuses() {
 		return this.roomstatuses;
 	}
