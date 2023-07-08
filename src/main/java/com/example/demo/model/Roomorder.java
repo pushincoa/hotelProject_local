@@ -134,7 +134,7 @@ public class Roomorder implements Serializable {
 		return this.webmember;
 	}
 //	@JsonIgnore
-//	@JsonInclude
+	@JsonInclude
 	public void setWebmember(Webmember webmember) {
 		this.webmember = webmember;
 	}
