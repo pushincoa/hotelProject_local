@@ -15,6 +15,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="roomorder")
 @NamedQuery(name="Roomorder.findAll", query="SELECT r FROM Roomorder r")
 //@JsonInclude
 public class Roomorder implements Serializable {

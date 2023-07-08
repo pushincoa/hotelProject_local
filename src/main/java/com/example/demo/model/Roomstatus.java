@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * 
  */
 @Entity
+@Table(name="roomstatus")
 //@NamedQuery(name="Roomstatus.findAll", query="SELECT r FROM Roomstatus r")
 public class Roomstatus implements Serializable {
 	private static final long serialVersionUID = 1L;
