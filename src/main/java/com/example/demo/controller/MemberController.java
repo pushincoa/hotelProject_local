@@ -35,7 +35,7 @@ public class MemberController {
 	@Autowired
     private WebmemberService wms;
 
-    @GetMapping
+    @GetMapping("/wmember")
     public List<Webmember> getAllWebmembers() {
         return wms.allWebmembers();
     }
