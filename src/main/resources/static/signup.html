@@ -164,7 +164,6 @@
 
             $.ajax({
                 type: "POST",
-                url: "https://infra.zeabur.com:31748/api/check",
                 dataType: "text",
                 data: $("#email").val(),
                 contentType: "application/json",
@@ -180,7 +179,7 @@
                         
                         $.ajax({
                             type: "POST",
-                            url: "https://infra.zeabur.com:31748/api/signup",
+                            url: "/api/signup",
                             dataType: "html",
                             data: value,
                             contentType: "application/json",
