@@ -44,7 +44,7 @@ public class Roomorder implements Serializable {
 	//bi-directional many-to-one association to Webmember
 	
 	@ManyToOne
-	@JoinColumn(name="rmemail",referencedColumnName = "email")
+	@JoinColumn(name="email",referencedColumnName = "email")
 	private Webmember webmember;
 
 	public Roomorder() {
