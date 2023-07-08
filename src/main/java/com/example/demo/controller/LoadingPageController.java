@@ -19,8 +19,10 @@ import com.example.demo.model.Hotel;
 import com.example.demo.model.Roominfo;
 import com.example.demo.model.Roomorder;
 import com.example.demo.model.Roomstatus;
+import com.example.demo.model.Webmember;
 import com.example.demo.repository.RoomOrderRepository;
 import com.example.demo.repository.RoomstatusRepository;
+import com.example.demo.repository.WebmemberRepository;
 import com.example.demo.service.HotelService;
 import com.example.demo.service.RoominfoService;
 import com.example.demo.service.RoomstatusService;
@@ -36,6 +38,12 @@ public class LoadingPageController {
 	private RoomstatusRepository rr;
 	@Autowired
 	private RoomOrderRepository or;
+	
+	@Autowired
+	private WebmemberRepository m;
+	
+	@Autowired
+	private RoomOrderRepository xx;
 	
 	@Autowired
 	private RoomstatusService rss;
@@ -197,6 +205,25 @@ public class LoadingPageController {
 		
 		
 		
+	}
+	
+	@GetMapping("/wmember")
+	@CrossOrigin("*")
+	public  Map<String, List<Webmember>> searchuser(){
+		Map<String, List<Webmember>> data = new HashMap<>();
+		data.put("webmember", m.findAll());		
+		return data;		
+	}
+	
+	//點擊後抓取詳細資料
+	@GetMapping("/roomorder/{email}")
+	@CrossOrigin("*")
+	public  Map<String, List<Roomorder>> findOrderInfo(@PathVariable("email") String email){
+		Map<String, List<Roomorder>> data = new HashMap<>();
+		List<Roomorder> order =xx.findByEmail(email);
+		data.put("order", order);
+			
+		return data;		
 	}
 	
 //	@GetMapping("/area/*")

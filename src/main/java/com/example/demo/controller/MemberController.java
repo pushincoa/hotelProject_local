@@ -35,8 +35,7 @@ public class MemberController {
 	@Autowired
     private WebmemberService wms;
 
-    @GetMapping("/wmember")
-    @CrossOrigin("*")
+   
     public List<Webmember> getAllWebmembers() {
         return wms.allWebmembers();
     }
