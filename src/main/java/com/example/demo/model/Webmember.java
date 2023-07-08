@@ -111,7 +111,7 @@ public class Webmember implements Serializable {
 
 		return roomstatus;
 	}
-	@JsonIgnore
+	
 	public List<Roomorder> getRoomorders() {
 		return this.roomorders;
 	}
